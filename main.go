@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"embed"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -26,6 +27,7 @@ type apiConfig struct {
 var staticFiles embed.FS
 
 func main() {
+	fmt.Println(password)
 	err := godotenv.Load(".env")
 	if err != nil {
 		log.Printf("warning: assuming default configuration. .env unreadable: %v", err)
