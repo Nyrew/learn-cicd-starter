@@ -45,14 +45,10 @@ jobs:
 
       # Install goose for migrations
       - name: Install goose
-        run: |
-          go install github.com/pressly/goose/v3/cmd/goose@latest
-          echo "Goose installed"
+        run: go install github.com/pressly/goose/v3/cmd/goose@latest
 
-      # Run migrations
-      - name: Run database migrations
-        run: |
-          goose -dir ./migrations postgres "$DATABASE_URL" up
+      - name: Run migrations
+        run: ./scripts/migrateup.sh
 
       - name: Deploy to Cloud Run
         run: |
