@@ -31,7 +31,7 @@ jobs:
       - name: Setup gcloud CLI
         uses: google-github-actions/setup-gcloud@v1
         with:
-          project_id: your-project-id  # Replace with your GCP project ID
+          project_id: notely-443605  # Replace with your GCP project ID
           service_account_key: ${{ secrets.GCP_CREDENTIALS }}
 
       # Build and push Docker image to Google Artifact Registry
